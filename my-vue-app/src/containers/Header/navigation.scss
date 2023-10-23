@@ -1,0 +1,36 @@
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/mixins.scss";
+@import "../../assets/styles/colors.scss";
+
+.navigation{
+    &--desktop{
+        display: none;
+
+        @include medium-up{
+            display: block;
+            margin-left: -50px;
+        }
+        
+        @include large-up{
+            margin-left: -100px;
+        }
+
+        & ul{
+            display: flex;
+        }
+    
+        & a {
+            margin: 0 30px;
+            color: $gray-dark;
+    
+            &:hover{
+                color: $green-primary;
+            }
+    
+            &.active{
+                font-weight: $font-weight-bold;
+            }
+        }
+   
+    }
+}

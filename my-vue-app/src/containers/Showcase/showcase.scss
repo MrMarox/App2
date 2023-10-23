@@ -1,0 +1,64 @@
+@use "../../assets/styles/layout.scss" as l;
+@use "../../assets/styles/buttons.scss" as b;
+@import "../../assets/styles/typography.scss";
+@import "../../assets/styles/mixins.scss";
+
+.showcase{
+    padding-bottom:43px;
+
+    @include medium-up{
+        padding-bottom: 109px;
+    }
+    &__container{
+        @include l.container;
+        @include l.grid;
+
+        grid-template-columns: 1fr;
+
+        @include medium-up{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__content{
+        & h1{
+            margin-bottom: 14px;
+            
+            @include medium-up{
+                margin-bottom: 20px;
+            }
+        }
+        & p{
+            margin-bottom:29px;
+            font-size: $font-size-5;
+
+            @include medium-up{
+                margin-bottom: 49px;
+                @include paragraph;
+            }
+        }
+
+        &-buttons{
+            & .btn{
+                @include b.btn;
+                font-size: 12px;
+
+                @include medium-up{
+                    font-size: $font-size-5;
+                }
+
+                &:first-child{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    &__img{
+        @include u-img;
+        margin-top:14px; 
+        @include medium-up{
+            margin-top: 21px;
+        }
+    }
+    
+}

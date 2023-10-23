@@ -1,0 +1,53 @@
+@import "./colors";
+@import "./variables";
+@import "./mixins";
+
+@mixin btn{
+    display: inline-block;
+    padding:20px 25px;
+    background-color: $gray-dark;
+    color: $white;
+    text-align: center;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: $font-weight-bold;
+    margin: 5px 0;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    transition: .2s ease-in-out;
+
+    &:hover{
+        color:$gray-dark;
+        background-color: transparent;
+        border-color: $gray-dark;
+    }
+    @include medium-up{
+        font-size: $font-size-5;
+    }
+
+    &--outline{
+        background-color: transparent;
+        border-color: $gray-dark;
+        color:$gray-dark;
+
+        &:hover {
+            color: $white;
+            background-color: $gray-dark;
+            border-color: transparent;
+        }
+    }
+
+    &--green{
+        background-color: $green-primary;
+
+        &:hover{
+            color:$green-primary;
+            background-color: transparent;
+            border-color: $green-primary;
+        }
+    }
+
+    &--small{
+        padding: 12px 25px;
+    }
+}
